@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Translator</title>
+</head>
+<body>
+
+  <label for="inputText">Enter text:</label> 
+  <input type="text" id="inputText">
+  
+  <button id="translateBtn">Translate</button>
+  
+  <p id="outputText"></p>
+
+  <script>
+    const translations = {
+        "m​ew" : 'yes',
+        "me​w" : 'no',
+        "​mew" : 'maybe',
+        "mew​" : 'hungryyy',
+        "m​​ew" : 'nah',
+        "me​​w" : 'Did you find any more hyundai elantras?',
+        "​​mew" : 'heddo',
+        "mewmewme​w" : "heddo heddo heddo",
+        "mew​​​​": 'I\'m sleepy'
+
+    };
+
+    function translate() {
+      const input = document.getElementById('inputText').value;
+      let output = translations[input];
+
+      if(!output) {
+        output = 'Unknown';
+      }
+
+      document.getElementById('outputText').innerHTML = output;
+    }
+    
+    document.getElementById('translateBtn').onclick = translate;
+  </script>
+
+</body>
+</html>
