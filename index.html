@@ -1,45 +1,131 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Translator</title>
+<style>
+body {
+  text-align: center; 
+  background-color: lightpink;
+}
+
+.square-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.square {
+  width: 150px;
+  height: 150px;
+  margin: 0 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 36px;   
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#yes { 
+  background-color: lightgreen;
+}
+
+#no {
+  background-color: pink;  
+}
+
+</style>
 </head>
+
 <body>
 
-  <label for="inputText">Enter text:</label> 
-  <input type="text" id="inputText">
+<div class="square-container">
+  <div class="square">
+    <div class="tenor-gif-embed" data-postid="26276762" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+      <a href="https://tenor.com/view/cat-kitten-kitty-silly-cat-silly-kitten-gif-26276762">Cat Kitten GIF</a> from <a href="https://tenor.com/search/cat-gifs">Cat GIFs</a>
+    </div>
+  </div>
+
+  <div class="square">
+    <div class="tenor-gif-embed" data-postid="6447159128561953694" data-share-method="host" data-aspect-ratio="1.23267" data-width="100%">
+      <a href="https://tenor.com/view/heart-gif-6447159128561953694">Heart GIF</a> from <a href="https://tenor.com/search/heart-gifs">Heart GIFs</a>
+    </div>
+  </div>
+
+  <div class="square">
+    <div class="tenor-gif-embed" data-postid="21784258" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+      <a href="https://tenor.com/view/mochi-cat-vans-gif-21784258">Mochi Cat GIF</a> from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a>
+    </div>
+  </div>
+</div>
+
+<h1>Will you be my Valentine?</h1>   
+
+<button id="yes">Yes</button> 
+<button id="no">No</button>
+
+<script>
+const noButton = document.getElementById('no');
+const yesButton = document.getElementById('yes');
+
+let noClicks = 0;
+
+noButton.addEventListener('click', () => {
+  noClicks++;
   
-  <button id="translateBtn">Translate</button>
-  
-  <p id="outputText"></p>
-
-  <script>
-    const translations = {
-        "m​ew" : 'yes',
-        "me​w" : 'no',
-        "​mew" : 'maybe',
-        "mew​" : 'hungryyy',
-        "m​​ew" : 'nah',
-        "me​​w" : 'Did you find any more hyundai elantras?',
-        "​​mew" : 'heddo',
-        "mewmewme​w" : "heddo heddo heddo",
-        "mew​​​​": 'I\'m sleepy',
-        "m‎e‎w" : 'I wanna play a game later'
-
-    };
-
-    function translate() {
-      const input = document.getElementById('inputText').value;
-      let output = translations[input];
-
-      if(!output) {
-        output = 'Unknown';
-      }
-
-      document.getElementById('outputText').innerHTML = output;
-    }
+  if (noClicks === 1) {
+    noButton.textContent = "Are you sure?";
+        
+  } else if (noClicks === 2) {
+    noButton.textContent = "Pretty please?";
     
-    document.getElementById('translateBtn').onclick = translate;
-  </script>
+  } else if (noClicks === 3) {
+    noButton.textContent = "We can adopt a cat together!";
+    
+  } else {
+    const responses = [
+      "We'll have so much fun",
+      "Don't break my heart...",
+      "Maybe we can adopt 20 cats!",
+      "How about adopting 15 cats?",
+      "I'll make you more music",
+      "I'll make you a cat cake",
+      "I'll spam you with posts",
+      "I love you though...",
+      "PLEASE I LOVE YOU",
+      "I'LL DO ANYTHING",
+      "I''ll eat you out" 
+    ];
+    
+    const index = noClicks % responses.length;
+    noButton.textContent = responses[index];
+  }
+  
+  noButton.style.fontSize = 14 - noClicks + 'px';
+  yesButton.style.fontSize = 18 + 10 * noClicks + 'px'; 
+});
+
+yesButton.addEventListener('click', () => {
+  noButton.style.display = 'none';
+  yesButton.style.display = 'none';
+
+  const yayText = document.createElement('p');
+  yayText.textContent = 'YAY!!!';
+  document.body.appendChild(yayText);
+  yayText.style.fontSize = '24px'; 
+  yayText.style.marginTop = '20px'; 
+});
+
+</script>
+
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
 </body>
 </html>
