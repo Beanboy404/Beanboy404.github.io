@@ -100,7 +100,7 @@ function loadSong(currentSongIndex, optionOrder = null, songItems = null, autopl
    playerSongTitle.innerHTML = `<p>${songItems[currentSongItem].title}</p>`;
    playerSongAuthor.innerHTML = `<p>${songItems[currentSongItem].author}</p>`;
 
-   fullscreenPlayerBackgroundSongImg.src = songItems[currentSongItem].img.medium;
+   fullscreenPlayerBackgroundSongImg.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Oe-X-9N6IgSUvUf5vdbQCMDzyLQSYHFueQ&s';
    fullscreenPlayerSongTitle.innerHTML = `<p>${songItems[currentSongItem].title}</p>`;
    fullscreenPlayerSongAuthor.innerHTML = `<p>${songItems[currentSongItem].author}</p>`;
 
