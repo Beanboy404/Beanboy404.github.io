@@ -76,7 +76,7 @@ const closeAlert = document.querySelector('.close_btn');
 asideBarButtons.forEach(button => {
    button.addEventListener('click', (event) => {
       // event.preventDefault();
-      showMessage('YOU ARE ALREADY HERE CON CAC');
+      showMessage('Coming Soon!');
    })
 })
 function showMessage(message, type = 'info') {
