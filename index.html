@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -36,12 +36,23 @@
                      </svg>
                   </a>
                </div>
-             
+               <div class="navbar-item">
+                  <span href="#" id="open-search">
+                     
+                  </span>
+               </div>
 
-            
+               <div class="navbar-item">
+                  <span href="playlists.html" id="to-playlists">
+                  
+                  </span>
+               </div>
             </div>
             <div class="navbar-bottom">
                <div class="navbar-item">
+                  <span href="#" id="to-profile">
+                  
+                  </span>
                </div>
                <div class="navbar-item">
                   <a href="#" class="navbar-item__theme nav-button" id="switch-theme">
@@ -104,14 +115,14 @@
                         </svg>
                      </div>
                   </button>
-                  <h3 class="playlist-title-text-scrolled" id="playlist-title-text-scrolled">Playlist for real Meloman (not full version)</h3>
+                  <h3 class="playlist-title-text-scrolled" id="playlist-title-text-scrolled">Playlist</h3>
                </div>
                <div class="header-container-right" id="header-import-right">
 
                   <div class="import-forms">
                      <div class="forPlaylist import-form" id="for-playlist-form">
                         <input class="import-input" type="text" id="playlistId"
-                           placeholder="Paste Playlist Link to Bubify Here">
+                           placeholder="Playlist link in YouTube Music...">
                         <button class="import-button" id="importPlaylist" onclick="loadClient().then(fetchPlaylist)">
                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
                               fill="none">
@@ -124,7 +135,7 @@
 
                      <div class="forSong import-form hidden" id="for-song-form">
                         <input class="import-input" type="text" id="songId"
-                           placeholder="Paste Song Link to Bubify Here">
+                           placeholder="Song link in YouTube Music...">
                         <button class="import-button" id="importSong" onclick="loadClient().then(fetchSong)">
                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
                               fill="none">
@@ -165,8 +176,7 @@
                   </label>
                </div>
 
-               <div class="header-container-left" id="header-import-left">
-               </div>
+               
             </div>
 
          </header>
@@ -708,21 +718,6 @@
    <script src="js/main.js"></script>
    <script src="js/progressbar.js"></script>
    <script src="js/playlist.js"></script>
-   <script>
-      // Function to replace the image source
-// Function to replace the image source
-function replaceImageSource() {
-  const images = document.querySelectorAll('img[src*="i.ytimg.com"]');
-  const newSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Oe-X-9N6IgSUvUf5vdbQCMDzyLQSYHFueQ&s';
-
-  images.forEach(img => {
-    img.src = newSrc;
-  });
-}
-
-// Call the replaceImageSource function every second
-setInterval(replaceImageSource, 1000);
-   </script>
 </body>
 
 </html>
