@@ -96,11 +96,11 @@ function loadSong(currentSongIndex, optionOrder = null, songItems = null, autopl
    }
 
    //? set current song's data to player 
-   playerSongImg.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Oe-X-9N6IgSUvUf5vdbQCMDzyLQSYHFueQ&s';
+   playerSongImg.src = 'https://i.postimg.cc/KYVFWy3z/IMG-5720.jpg';
    playerSongTitle.innerHTML = `<p>${songItems[currentSongItem].title}</p>`;
    playerSongAuthor.innerHTML = `<p>${songItems[currentSongItem].author}</p>`;
 
-   fullscreenPlayerBackgroundSongImg.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Oe-X-9N6IgSUvUf5vdbQCMDzyLQSYHFueQ&s';
+   fullscreenPlayerBackgroundSongImg.src = 'https://i.postimg.cc/KYVFWy3z/IMG-5720.jpg';
    fullscreenPlayerSongTitle.innerHTML = `<p>${songItems[currentSongItem].title}</p>`;
    fullscreenPlayerSongAuthor.innerHTML = `<p>${songItems[currentSongItem].author}</p>`;
 
@@ -179,7 +179,7 @@ function loadSong(currentSongIndex, optionOrder = null, songItems = null, autopl
             slides: (function () {
                let songImgs = [], songImg, songImgElem;
                for (let i = 0; i < songItems.length; i++) {
-                  const newImageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Oe-X-9N6IgSUvUf5vdbQCMDzyLQSYHFueQ&s';
+                  const newImageUrl = 'https://i.postimg.cc/KYVFWy3z/IMG-5720.jpg';
                   songImgElem =
                   ` <div class="fullscreen-player__song-img-adjust" id="${i + 1}">
                       <img src="${newImageUrl}" id="fullscreen-player-song-image" alt="" loading="lazy">
