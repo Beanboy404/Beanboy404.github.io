@@ -179,12 +179,12 @@ function loadSong(currentSongIndex, optionOrder = null, songItems = null, autopl
             slides: (function () {
                let songImgs = [], songImg, songImgElem;
                for (let i = 0; i < songItems.length; i++) {
-                  songImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Oe-X-9N6IgSUvUf5vdbQCMDzyLQSYHFueQ&s';
+                  const newImageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Oe-X-9N6IgSUvUf5vdbQCMDzyLQSYHFueQ&s';
                   songImgElem =
-                 ` <div class="fullscreen-player__song-img-adjust" id="${i + 1}">
-                     <img src="${songImg}" id="fullscreen-player-song-image" alt="" loading="lazy">
-                     <div class="swiper-lazy-preloader"></div>
-                  </div>`
+                  ` <div class="fullscreen-player__song-img-adjust" id="${i + 1}">
+                      <img src="${newImageUrl}" id="fullscreen-player-song-image" alt="" loading="lazy">
+                      <div class="swiper-lazy-preloader"></div>
+                   </div>`
                   songImgs.push(songImgElem);
                }
                return songImgs;
