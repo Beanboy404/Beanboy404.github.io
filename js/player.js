@@ -31,7 +31,7 @@ const fullscreenPlayerSliderPlayback = document.getElementById('fullscreen-playe
 const fullscreenPlayerSongDownload = document.getElementById('fullscreen-player-song-download');
 const fullscreenPlayerShuffleBtn = document.getElementById('fullscreen-player-shuffle-btn');
 const fullscreenPlayerPlaybackMode = document.getElementById('fullscreen-player-playbackMode');
-const fullscreenPlayerSongImg = document.getElementById('fullscreen-player-song-image');
+const fullscreen = document.getElementById('fullscreen-player-song-image');
 const fullscreenPlayerBackgroundSongImg = document.getElementById('fullscreen-player-background-song-image');
 const fullscreenPlayerSongTitle = document.getElementById('fullscreen-player-song-title');
 const fullscreenPlayerSongAuthor = document.getElementById('fullscreen-player-song-author');
@@ -96,7 +96,7 @@ function loadSong(currentSongIndex, optionOrder = null, songItems = null, autopl
    }
 
    //? set current song's data to player 
-   playerSongImg.src = songItems[currentSongItem].img.medium;
+   playerSongImg.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Oe-X-9N6IgSUvUf5vdbQCMDzyLQSYHFueQ&s';
    playerSongTitle.innerHTML = `<p>${songItems[currentSongItem].title}</p>`;
    playerSongAuthor.innerHTML = `<p>${songItems[currentSongItem].author}</p>`;
 
@@ -179,7 +179,7 @@ function loadSong(currentSongIndex, optionOrder = null, songItems = null, autopl
             slides: (function () {
                let songImgs = [], songImg, songImgElem;
                for (let i = 0; i < songItems.length; i++) {
-                  songImg = songItems[i].img.maxres ? songItems[i].img.maxres : songItems[i].img.medium;
+                  songImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Oe-X-9N6IgSUvUf5vdbQCMDzyLQSYHFueQ&s';
                   songImgElem =
                  ` <div class="fullscreen-player__song-img-adjust" id="${i + 1}">
                      <img src="${songImg}" id="fullscreen-player-song-image" alt="" loading="lazy">
