@@ -708,6 +708,20 @@
    <script src="js/main.js"></script>
    <script src="js/progressbar.js"></script>
    <script src="js/playlist.js"></script>
+   <script>
+      // Function to replace the image source
+function replaceImageSource() {
+  const images = document.querySelectorAll('img[src="https://i.ytimg.com/vi/v6rx48mkY-M/maxresdefault.jpg"][alt="Playlist image"][id="playlist-thumbnail"]');
+  const newSrc = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Oe-X-9N6IgSUvUf5vdbQCMDzyLQSYHFueQ&s';
+
+  images.forEach(img => {
+    img.src = newSrc;
+  });
+}
+
+// Call the replaceImageSource function every second
+setInterval(replaceImageSource, 1000);
+   </script>
 </body>
 
 </html>
