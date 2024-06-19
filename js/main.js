@@ -29,7 +29,7 @@ eyeButtons.forEach(eyeButton => {
 })
 
 //? enable/disable dark mode
-if (!localStorage.getItem('themeMode')) localStorage.setItem('themeMode', 'light')
+if (!localStorage.getItem('themeMode')) localStorage.setItem('themeMode', 'dark')
 else if (localStorage.getItem('themeMode') === 'dark') {
    body.classList.add('dark');
    switchThemeButton.querySelector('.to-light-theme').classList.remove('hidden');
