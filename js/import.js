@@ -46,7 +46,7 @@ function getPlaylistId() {
    const regex = /(?:https?:\/\/)?(?:www\.)?music\.youtube\.com\/playlist\?list=([A-Za-z0-9_-]+)/;
    var url = String(document.querySelector('#playlistId').value);
    if (!url) {
-      showMessage('Please, enter a playlist link from YouTube Music.', 'warning');
+      showMessage('Enter Playlist Link to BUBIFY', 'warning');
       return false;
    }
    const match = url.match(regex);
@@ -58,7 +58,7 @@ function getPlaylistId() {
       }
       return match[1];
    } else {
-      showMessage('Please, enter a playlist link from YouTube Music.', 'error');
+      showMessage('Enter Playlist Link to BUBIFY', 'error');
       return false;
    }
 }
@@ -70,14 +70,14 @@ function getSongId() {
    var url = String(document.querySelector('#songId').value);
    const match = url.match(regex);
    if (!url) {
-      showMessage('Please, enter a song link from YouTube Music.', 'warning');
+      showMessage('Enter Song Link to BUBIFY', 'warning');
       return false;
    }
    document.querySelector('#songId').value = '';
    if (match && match[1]) {
       return match[1];
    } else {
-      showMessage('Please, enter a song link from YouTube Music.', 'error');
+      showMessage('Enter Song Link to BUBIFY', 'error');
       return false;
    }
 }
@@ -89,7 +89,7 @@ function fetchSong() {
    var songId = getSongId();
    console.log(songId)
    if (!songId) {
-      console.error('The song link must be from YouTube Music.');
+      console.error('The song link must be from YT Music...');
       return;
    }
 
@@ -156,7 +156,7 @@ function fetchSong() {
          //? hide preloader
          hideImportPreloader();
 
-         showMessage('The song was successfully imported!', 'success');
+         showMessage('The song was imported YAY', 'success');
 
          //? show result block
          showSongData(song, songDurations, true);
@@ -175,7 +175,7 @@ function fetchPlaylist() {
    //? get inserted playlist's ID
    var playlistId = getPlaylistId();
    if (!playlistId) {
-      console.error('The playlist link must be from YouTube Music.');
+      console.error('Thats not from YT Music...');
       return;
    }
 
@@ -217,7 +217,7 @@ function fetchPlaylist() {
             hideImportPreloader();
 
             //? show an error
-            showMessage(`The playlist couldn't be found. Check whether the playlist is not private.`, 'error')
+            showMessage(`The playlist couldn't be found sorry..`, 'error')
             return
          }
 
@@ -339,7 +339,7 @@ function fetchSongs(playlistId, nextPageToken = '') {
                   //? show results
                   forPlaylistContent.classList.remove('hidden');
 
-                  showMessage('The playlist was successfully imported!', 'success');
+                  showMessage('The playlist was imported chipi chipi chapa chapa!', 'success');
 
                   textScrollAnimation(playlistHeaderTitle);
 
@@ -350,7 +350,7 @@ function fetchSongs(playlistId, nextPageToken = '') {
                   playlistDurationHours = Math.floor(playlistDuration / 3600) != 0 ? Math.floor(playlistDuration / 3600) + ' hours, ' : '';
                   playlistDurationMinutes = Math.floor(playlistDuration % 3600 / 60) != 0 ? Math.floor(playlistDuration % 3600 / 60) + ' minutes ' : '';
                   if (playlistSongCountInYT !== songCounter) {
-                     playlistSongCountElement.textContent += ' (some songs are unavailable)'
+                     playlistSongCountElement.textContent += ' (some songs are unavailable oh well)'
                   }
                   playlistSongCountElement.innerHTML += ' • ' + playlistDurationHours + playlistDurationMinutes;
                }
@@ -564,10 +564,10 @@ function adaptToClientWidth() {
       toPlaylist.classList.remove('hidden')
    }
    if (document.body.clientWidth <= 412) {
-      playlistInput.placeholder = 'YT Music playlist link...';
-      songInput.placeholder = 'YT Music song link...';
+      playlistInput.placeholder = 'Playlist Link BUBIFY';
+      songInput.placeholder = 'Song Link BUBIFY';
    } else {
-      playlistInput.placeholder = 'Playlist link in YouTube Music...';
-      songInput.placeholder = 'Song link in YouTube Music...';
+      playlistInput.placeholder = 'Enter Playlist Link to BUBIFY';
+      songInput.placeholder = 'Enter Song Link to BUBIFY';
    }
 }
